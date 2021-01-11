@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative '../lib/board.rb'
+
 puts 'Welcome to the best Tic-Tac-Toe game!'
 
 puts 'May I have the first player name'
@@ -16,9 +18,10 @@ second_selection = nil
 
 puts "Hello #{second_player},You will be playing with #{second_selection}"
 
-puts 'x|o|x '
-puts 'o|x| '
-puts 'x|o| '
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+printBoard(board)
+
+
 
 # At this point the board will be created and the players will check who wins
 
