@@ -1,4 +1,27 @@
 #!/usr/bin/env ruby
 
-puts 'Hello World'
 puts 'Welcome to the best Tic-Tac-Toe game!'
+
+puts 'May I have the first player name'
+first_player = gets.chomp
+puts "Hello #{first_player}, nice to meet you. Would you prefer X or O ?"
+first_selection = gets.chomp
+puts "Nice #{first_player} you will be playing with #{first_selection}"
+
+puts 'May I have the second player name'
+second_player = gets.chomp
+second_selection = nil
+# At this point I will create a class that will asume
+# the second player choice based on the first player choice.
+
+puts "Hello #{second_player},You will be playing with #{second_selection}"
+
+puts 'x|o|x '
+puts 'o|x| '
+puts 'x|o| '
+
+# At this point the board will be created and the players will check who wins
+
+puts 'Congrats X user is the winner!!!'
+
+# At the end the winner  will be announced and the game will end
