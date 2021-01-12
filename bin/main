@@ -45,4 +45,8 @@ while game_on
     puts 'Its a draw'
     break
   end
+
+  switchPlayer true
+  # IN THE LAST SECTION WE WILL HAVE A METHOD THAT INSTANTLY
+  # WILL CHANGE TO THE NEXT PLAYER FOR THE NEXT TURN
 end
