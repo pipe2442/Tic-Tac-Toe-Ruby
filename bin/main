@@ -1,3 +1,52 @@
 #!/usr/bin/env ruby
 
-puts 'Hello World'
+game_on = true
+
+# IN THIS SECTION WE WILL ASK FOR BOTH USERS NAME
+# AND WE WILL ASIGN X AND O
+
+puts 'Welcome to the best Tic-Tac-Toe game!'
+puts ' '
+puts 'May I have the first player name'
+first_player = gets.chomp
+puts "Hello #{first_player}, nice to meet you. You would be using X"
+puts ' '
+puts 'May I have the second player name'
+second_player = gets.chomp
+puts "Hello #{second_player},You will be playing with O"
+puts ' '
+
+while game_on
+
+  # INSIDE THIS  LOOP THE GAME WILL OCCUR UNTIL WE GET A WIN OR A DRAW
+
+  puts 'Its players turn'
+  puts 'Please select an available move based on the board numbers '
+  puts ' '
+
+  # IN THIS SECTION WE ASK THE USER CHOICE
+  # AND WE PRINT THE BOARD WITH NUMERIC OPTIONS
+
+  puts '1 | 2 | 3'
+  puts '4 | 5 | 6'
+  puts '7 | 8 | 9'
+
+  if validMove false
+    # HERE WE CREATE A SITUATION TO CHECK VALID MOVES
+    puts 'thats not a valid option'
+  end
+
+  if win
+    # HERE WE CREATE A CONDITION TO CHECK A WINNER
+    puts 'Congrats user is the winner!!!'
+    break
+  elsif draw
+    # HERE WE CREATE CONDITION TO CHECK FOR A DRAW
+    puts 'Its a draw'
+    break
+  end
+
+  switchPlayer true
+  # IN THE LAST SECTION WE WILL HAVE A METHOD THAT INSTANTLY
+  # WILL CHANGE TO THE NEXT PLAYER FOR THE NEXT TURN
+end
