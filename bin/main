@@ -1,15 +1,9 @@
 #!/usr/bin/env ruby
 
-board = %w[1 2 3 4 5 6 7 8 9]
-turn = 0
+game_on = true
 
-def display_game(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts '-----------'
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts '-----------'
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
+# IN THIS SECTION WE WILL ASK FOR BOTH USERS NAME
+# AND WE WILL ASIGN X AND O
 
 puts 'Welcome to the best Tic-Tac-Toe game!'
 puts ' '
@@ -22,32 +16,33 @@ second_player = gets.chomp
 puts "Hello #{second_player},You will be playing with O"
 puts ' '
 
-4.times do
-  player = first_player
-  selection = 'X'
+while game_on
 
-  if turn.odd?
-    player = second_player
-    selection = 'O'
+  # INSIDE THIS  LOOP THE GAME WILL OCCUR UNTIL WE GET A WIN OR A DRAW
+
+  puts 'Its players turn'
+  puts 'Please select an available move based on the board numbers '
+  puts ' '
+
+  # IN THIS SECTION WE ASK THE USER CHOICE
+  # AND WE PRINT THE BOARD WITH NUMERIC OPTIONS
+
+  puts '1 | 2 | 3'
+  puts '4 | 5 | 6'
+  puts '7 | 8 | 9'
+
+  if validMove false
+    # HERE WE CREATE A SITUATION TO CHECK VALID MOVES
+    puts 'thats not a valid option'
   end
 
-  puts "Its #{player} turn"
-  puts 'Please select an available move based on the board numbers '
-
-  display_game(board)
-  player_sel = gets.chomp.to_i
-  board[player_sel - 1] = selection
-
-  turn += 1
-
-  puts 'THATS NOT A VALID MOVE' if turn == 3
-  puts ' '
+  if win
+    # HERE WE CREATE A CONDITION TO CHECK A WINNER
+    puts 'Congrats user is the winner!!!'
+    break
+  elsif draw
+    # HERE WE CREATE CONDITION TO CHECK FOR A DRAW
+    puts 'Its a draw'
+    break
+  end
 end
-
-display_game(board)
-
-# Here we can check the case of a draw
-puts 'Its a draw'
-
-# Here we can check the case of a winner
-puts 'Congrats X user is the winner!!!'
