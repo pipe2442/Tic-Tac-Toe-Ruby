@@ -51,6 +51,8 @@ class GameBoard
         @turn -= 1
       elsif (@board[player_sel - 1] == 'X') || (@board[player_sel - 1] == 'O')
         puts 'THAT SPOT IS ALREADY TAKEN'
+        @turn -= 1
+        validMove = false
       end
 
       @board[player_sel - 1] = selection
