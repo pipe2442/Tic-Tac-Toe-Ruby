@@ -23,7 +23,7 @@ def win_validator(_board, _firstp, _secondp, comb)
   comb.find do |ind|
     values = @board.values_at(*ind)
     next unless values.all?('X') || values.all?('O')
-      
+
     create_board
     @winner = true
     winner_message
