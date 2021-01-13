@@ -1,1 +1,21 @@
+#!/usr/bin/env ruby
 
+require_relative '../lib/board.rb'
+
+puts '|===> WELCOME TO TIC TAC TOE <===|'
+puts ' '
+puts 'Please introduce the first player name:'
+puts ' '
+first_player = gets.chomp
+puts ' '
+puts "Hello #{first_player}, nice to meet you. You would be using 'X'"
+puts ' '
+puts 'Please introduce the second players name:'
+puts ' '
+second_player = gets.chomp
+puts ' '
+puts "Hello #{second_player},You will be playing with 'O'"
+puts ' '
+
+tictactoe = GameBoard.new(first_player, second_player)
+tictactoe.game_turn
