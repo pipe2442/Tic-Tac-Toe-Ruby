@@ -51,7 +51,7 @@ def game_selector(player, player_sel, selection)
 end
 
 def draw_case
-  puts 'SORRY, ITS A DRAW' if @turn == 9 && @winner == false
+  puts 'SORRY, ITS A DRAW NO WINNER' if @turn == 9 && @winner == false
   create_board
   return @game_on = false if @turn == 9 && @winner == false
 end

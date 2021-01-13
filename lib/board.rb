@@ -40,4 +40,3 @@ class GameBoard
     end
   end
 end
-
