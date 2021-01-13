@@ -2,153 +2,18 @@
 
 require_relative '../lib/board.rb'
 
-board = %w[1 2 3 4 5 6 7 8 9]
-turn = 0
-game_on = true
-
-puts 'Welcome to the best Tic-Tac-Toe game!'
+puts '|===> WELCOME TO TIC TAC TOE <===|'
 puts ' '
-puts 'May I have the first player name'
+puts 'Please introduce the first player name:'
+puts ' '
 first_player = gets.chomp
-puts "Hello #{first_player}, nice to meet you. You would be using X"
+puts "Hello #{first_player}, nice to meet you. You would be using 'X'"
 puts ' '
-puts 'May I have the second player name'
+puts 'Please introduce the second players name:'
+puts ' '
 second_player = gets.chomp
-puts "Hello #{second_player},You will be playing with O"
+puts "Hello #{second_player},You will be playing with 'O'"
 puts ' '
 
-while game_on
-  player = first_player
-  selection = 'X'
-
-  if turn.odd?
-    player = second_player
-    selection = 'O'
-  end
-
-  puts "Its #{player} turn"
-  puts 'Please select an available move based on the board numbers '
-
-  display_game(board)
-  player_sel = gets.chomp.to_i
-
-  if player_sel < 1
-    puts 'THATS NOT A VALID MOVE!!!'
-    turn -= 1
-  elsif player_sel > 9
-    puts 'THATS NOT A VALID MOVE!!!'
-    turn -= 1
-  elsif board[player_sel - 1] == 'X'
-    puts 'THAT SPOT IS ALREADY TAKEN'
-    turn -= 1
-  elsif board[player_sel - 1] == 'O'
-    puts 'THAT SPOT IS ALREADY TAKEN'
-    turn -= 1
-  elsif board[player_sel - 1] != 'X'
-    board[player_sel - 1] = selection
-  elsif board[player_sel - 1] != 'O'
-    board[player_sel - 1] = selection
-  end
-
-  turn += 1
-
-  puts ' '
-  puts ' '
-
-  if [board[0], board[1], board[2]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[3], board[4], board[5]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[6], board[7], board[8]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[0], board[3], board[6]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[1], board[4], board[7]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[2], board[5], board[8]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[0], board[4], board[8]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[2], board[4], board[6]] == %w[X X X]
-    puts "El ganador es #{first_player}"
-    puts ' '
-    puts ' '
-    break
-
-  # ..................................................
-
-  elsif [board[0], board[1], board[2]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[3], board[4], board[5]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[6], board[7], board[8]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[0], board[3], board[6]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[1], board[4], board[7]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[2], board[5], board[8]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[0], board[4], board[8]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  elsif [board[2], board[4], board[6]] == %w[O O O]
-    puts "El ganador es #{second_player}"
-    puts ' '
-    puts ' '
-    break
-  end
-
-  if board.all? { |i| (i == 'X') || (i == 'O') }
-    puts 'ITS A DRAW'
-    puts ' '
-    puts ' '
-    break
-  end
-
-  puts ' '
-  puts ' '
-end
-
-display_game(board)
+tictactoe = GameBoard.new(first_player, second_player)
+tictactoe.gameTurn
