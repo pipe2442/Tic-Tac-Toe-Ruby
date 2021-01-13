@@ -4,7 +4,7 @@
 
 > One paragraph statement about the project.
 
-![screenshot](./app_screenshot.png)
+![](lib/TIC%20TAC%20TOE%20SCREEN.PNG)
 
 Additional description about the project and its features.
 
