@@ -19,7 +19,6 @@ class GameBoard
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
-  # rubocop:disable MethodLength
   def game_turn
     while @game_on
       player = @first_player
@@ -41,4 +40,4 @@ class GameBoard
     end
   end
 end
-# rubocop:enable MethodLength
+
