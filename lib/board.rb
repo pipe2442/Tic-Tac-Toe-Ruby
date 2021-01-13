@@ -1,3 +1,5 @@
+require_relative '../lib/control.rb'
+# Class created to control game flow
 class GameBoard
   def initialize(first_player, second_player)
     @board = %w[1 2 3 4 5 6 7 8 9]
@@ -6,16 +8,7 @@ class GameBoard
     @first_player = first_player
     @second_player = second_player
     @winner = false
-    @WIN_COMBINATIONS = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [6, 4, 2]
-    ]
+    @valid_move = true
   end
 
   def create_board
@@ -26,66 +19,26 @@ class GameBoard
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
-  def gameTurn
+  # rubocop:disable MethodLength
+  def game_turn
     while @game_on
       player = @first_player
       selection = 'X'
-      validMove = true
-
       if @turn.odd?
         player = @second_player
         selection = 'O'
       end
-
-      puts "Its #{player} turn"
-      puts 'Please select an available move based on the board numbers:'
+      puts "#{player} please select a move based on the board numbers:"
       puts ' '
       create_board
       player_sel = gets.chomp.to_i
-
-      if (player_sel < 1) || (player_sel > 9)
-        puts 'THATS NOT A VALID MOVE!'
-        validMove = false
-        @turn -= 1
-      elsif (@board[player_sel - 1] == 'X') || (@board[player_sel - 1] == 'O')
-        puts 'THAT SPOT IS ALREADY TAKEN'
-        @turn -= 1
-        validMove = false
-      end
-
+      valid_moves(player_sel, @board)
       @turn += 1
-
-      if (player == @first_player) && validMove
-        @board[player_sel - 1] = selection
-      elsif (player == @second_player) && validMove
-        @board[player_sel - 1] = selection
-      end
-
-      validMove = true
-
-      @WIN_COMBINATIONS.find do |indices|
-        values = @board.values_at(*indices)
-        if values.all?('X')
-          puts "CONGRATULATIONS THE 'X' PLAYER NAMED #{@first_player} WINS"
-          puts ' '
-          create_board
-          @winner = true
-          @game_on = false
-        elsif values.all?('O')
-          puts "CONGRATULATIONS THE 'O' PLAYER NAMED #{@second_player} WINS"
-          puts ' '
-          create_board
-          @winner = true
-          @game_on = false
-        end
-      end
-
-      next unless @turn == 9 && @winner == false
-      puts ' '
-      puts 'GAME FINISHED ITS A DRAW NO ONE WINS'
-      puts ' '
-      @game_on = false
-
+      game_selector(player, player_sel, selection)
+      @valid_move = true
+      win_validator(@board, @first_player, @second_player, combinations)
+      draw_case
     end
   end
 end
+# rubocop:enable MethodLength

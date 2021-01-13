@@ -18,4 +18,4 @@ puts "Hello #{second_player},You will be playing with 'O'"
 puts ' '
 
 tictactoe = GameBoard.new(first_player, second_player)
-tictactoe.gameTurn
+tictactoe.game_turn
