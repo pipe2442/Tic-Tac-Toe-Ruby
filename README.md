@@ -7,6 +7,13 @@
 
 The goal of this project is to bring to practice the main concepts of Object-Oriented Programming. Particularly classes and access to their attributes.
 
+
+## Instructions
+- Enter your and your partner's name. Player 1 is automatically assign 'X' symbol and Player 2 'O' symbol.
+- Choose charater 1 to 9 to start the game.
+- You win when 3 of your symbols align vertically, horizontally or diagonally.
+
+
 ## Built With
 
 - Ruby
@@ -18,7 +25,10 @@ The goal of this project is to bring to practice the main concepts of Object-Ori
 
 ## Getting Started
 
-**Install on Your Own Machine. You can skip the linter setup if you don't want to validate the code against good coding standards.**
+- Install on Your Own Machine. You can skip the linter setup if you don't want to validate the code against good coding standards.
+- Open the terminal command line.
+- git clone https://github.com/pipe2442/Tic-Tac-Toe-Ruby
+- Enter bin/main to start the game.
 
 
 ### Prerequisites
