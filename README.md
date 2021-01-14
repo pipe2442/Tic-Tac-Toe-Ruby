@@ -1,18 +1,15 @@
 # Tic-Tac-Toe-Ruby
 
-# Project Name
 
-> One paragraph statement about the project.
+> Tic-Tac-Toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid.
 
 ![](lib/TIC%20TAC%20TOE%20SCREEN.PNG)
 
-Additional description about the project and its features.
+The goal of this project is to bring to practice the main concepts of Object-Oriented Programming. Particularly, classes and access to their attributes.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
 
 ## Live Demo
 
@@ -21,33 +18,25 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**Install on Your Own Machine. You can skip the linter setup if you don't want to validate the code against good coding standards.**
 
-
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-### Setup
+### ruby
 
-### Install
+### rubocop
 
-### Usage
-
-### Run tests
-
-### Deployment
-
+### rspec
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Luis Angulo**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+- GitHub: [@pipe2442](https://https://github.com/pipe2442)
+- Twitter: [@donCodigo_](https://twitter.com/donCodigo_)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/pipe2442/)
 
 ## 🤝 Contributing
 
