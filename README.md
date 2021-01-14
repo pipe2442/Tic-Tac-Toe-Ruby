@@ -5,7 +5,7 @@
 
 ![](lib/TIC%20TAC%20TOE%20SCREEN.PNG)
 
-The goal of this project is to bring to practice the main concepts of Object-Oriented Programming. Particularly, classes and access to their attributes.
+The goal of this project is to bring to practice the main concepts of Object-Oriented Programming. Particularly classes and access to their attributes.
 
 ## Built With
 
