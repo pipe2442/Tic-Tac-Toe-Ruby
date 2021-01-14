@@ -24,7 +24,7 @@ An early variation of tic-tac-toe was played in the Roman Empire, around the fir
 - Open the terminal command line.
 - git clone https://github.com/pipe2442/Tic-Tac-Toe-Ruby
 - cd Tic-Tac-Toe-Ruby
-- Enter bin/main to start the game.
+- Enter main on command terminal to start the game.
 
 ## Instructions
 - Enter your and your partner's name. Player 1 is automatically assign 'X' symbol and Player 2 'O' symbol.
@@ -35,7 +35,7 @@ An early variation of tic-tac-toe was played in the Roman Empire, around the fir
 - if players marked the 9 slots in the board without 3 symbols aligned as the win scenarios the game will be marked as a draw.
 
 
-### Prerequisites
+## Prerequisites
 
 ### ruby
 
