@@ -30,8 +30,12 @@ def winsplayer_message
   puts "Congrats #{@second_player} you are the winner"
 end
 
-def move_selection
-  puts 'please select a move based on the board numbers:'
+def xmove_selection
+  puts "Its 'X' turn select a number:"
+end
+
+def omove_selection
+  puts "Its 'O' turn select a number:"
 end
 
 def chomping
