@@ -1,0 +1,10 @@
+{
+    "editor.fontSize": 15,
+    "editor.accessibilityPageSize": 7,
+    "markdown.preview.fontSize": 7,
+    "terminal.integrated.fontSize": 7,
+    "editor.codeLensFontSize": 7,
+    "screencastMode.fontSize": 20,
+    "debug.console.fontSize": 7,
+    "editor.tabSize": 3
+}
