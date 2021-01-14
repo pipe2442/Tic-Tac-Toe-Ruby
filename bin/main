@@ -1,23 +1,6 @@
 #!/usr/bin/env ruby
-require_relative '../lib/control.rb'
-
-def draw_case
-  puts 'SORRY, ITS A DRAW NO WINNER' if @turn == 9 && @winner == false
-  create_board
-  return @game_on = false if @turn == 9 && @winner == false
-end
-
-def valid_moves(player_sel, _board)
-  if (player_sel < 1) || (player_sel > 9)
-    puts 'THATS NOT A VALID MOVE!'
-    @valid_move = false
-    @turn -= 1
-  elsif (@board[player_sel - 1] == 'X') || (@board[player_sel - 1] == 'O')
-    puts 'THAT SPOT IS ALREADY TAKEN'
-    @turn -= 1
-    @valid_move = false
-  end
-end
+require_relative '../lib/player.rb'
+require_relative '../lib/game.rb'
 
 def create_board
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
@@ -27,45 +10,32 @@ def create_board
   puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
 end
 
-def winner_message
-  if @turn.odd?
-    puts "Congrats #{@first_player} you are the winner"
-  else
-    puts "Congrats #{@second_player} you are the winner"
-  end
+def draw_message
+  puts 'SORRY, ITS A DRAW NO WINNER'
 end
 
-class GameBoard
-  def initialize(first_player, second_player)
-    @board = %w[1 2 3 4 5 6 7 8 9]
-    @game_on = true
-    @turn = 0
-    @first_player = first_player
-    @second_player = second_player
-    @winner = false
-    @valid_move = true
-  end
+def valid_message
+  puts 'THATS NOT A VALID MOVE!'
+end
 
-  def game_turn
-    while @game_on
-      player = @first_player
-      selection = 'X'
-      if @turn.odd?
-        player = @second_player
-        selection = 'O'
-      end
-      puts "#{player} please select a move based on the board numbers:"
-      puts ' '
-      create_board
-      player_sel = gets.chomp.to_i
-      valid_moves(player_sel, @board)
-      @turn += 1
-      game_selector(player, player_sel, selection)
-      @valid_move = true
-      win_validator(@board, @first_player, @second_player, combinations)
-      draw_case
-    end
-  end
+def spot_taken_message
+  puts 'THAT SPOT IS ALREADY TAKEN'
+end
+
+def winfplayer_message
+  puts "Congrats #{@first_player} you are the winner"
+end
+
+def winsplayer_message
+  puts "Congrats #{@second_player} you are the winner"
+end
+
+def move_selection
+  puts 'please select a move based on the board numbers:'
+end
+
+def chomping
+  gets.chomp.to_i
 end
 
 puts '|===> WELCOME TO TIC TAC TOE <===|'

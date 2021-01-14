@@ -30,3 +30,29 @@ def game_selector(player, player_sel, selection)
     @board[player_sel - 1] = selection
   end
 end
+
+def valid_moves(player_sel, _board)
+  if (player_sel < 1) || (player_sel > 9)
+    valid_message
+    @valid_move = false
+    @turn -= 1
+  elsif (@board[player_sel - 1] == 'X') || (@board[player_sel - 1] == 'O')
+    spot_taken_message
+    @turn -= 1
+    @valid_move = false
+  end
+end
+
+def draw_case
+  draw_message if @turn == 9 && @winner == false
+  create_board
+  return @game_on = false if @turn == 9 && @winner == false
+end
+
+def winner_message
+  if @turn.odd?
+    winfplayer_message
+  else
+    winsplayer_message
+  end
+end
