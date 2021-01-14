@@ -56,3 +56,11 @@ def winner_message
     winsplayer_message
   end
 end
+
+def move_selector_case
+  if @turn.odd?
+    omove_selection
+  else
+    xmove_selection
+  end
+end

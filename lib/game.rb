@@ -17,13 +17,7 @@ class GameBoard
         player = @second_player
         selection = 'O'
       end
-
-      if @turn.odd?
-        omove_selection
-      else
-        xmove_selection
-      end
-
+      move_selector_case
       create_board
       player_sel = chomping
       valid_moves(player_sel, @board)
