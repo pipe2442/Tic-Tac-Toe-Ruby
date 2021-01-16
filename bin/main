@@ -63,7 +63,7 @@ while start_game
   puts 'Press enter to start'
   puts ' '
   start_game = gets.chomp
-  break unless start_game.zero
+  break unless start_game == 0
 end
 system 'clear'
 
