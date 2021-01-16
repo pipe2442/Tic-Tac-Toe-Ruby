@@ -58,9 +58,13 @@ second_player = gets.chomp
 puts ' '
 puts "Hello #{second_player},You will be playing with 'O'"
 puts ' '
-puts 'Press any key to start'
-puts ' '
-start_game = gets.chomp
+start_game = 0
+while start_game
+  puts 'Press enter to start'
+  puts ' '
+  start_game = gets.chomp
+  break unless start_game.zero
+end
 system 'clear'
 
 tictactoe = GameBoard.new(first_player, second_player)
