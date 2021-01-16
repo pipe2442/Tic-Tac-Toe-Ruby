@@ -12,11 +12,7 @@ class GameBoard
   def game_turn
     while @game_on
       system 'clear'
-      if @valid_move == false
-        puts
-        puts 'Sorry thats not a valid move'
-        puts
-      end
+      valid_message if @valid_move == false
       @valid_move = true
       player = @first_player
       selection = 'X'

@@ -20,11 +20,6 @@ def valid_message
   puts
 end
 
-def spot_taken_message
-  puts 'THAT SPOT IS ALREADY TAKEN'
-  puts
-end
-
 def winfplayer_message
   puts "Congrats #{@first_player} you are the winner"
   puts
@@ -59,7 +54,7 @@ puts "Hello #{first_player}, nice to meet you. You would be using 'X'"
 puts ' '
 puts 'Please introduce the second players name:'
 puts ' '
-start = gets.chomp
+second_player = gets.chomp
 puts ' '
 puts "Hello #{second_player},You will be playing with 'O'"
 puts ' '

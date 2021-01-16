@@ -50,7 +50,7 @@ def draw_case
   system 'clear'
   draw_message
   create_board
-  return @game_on = false if @turn == 9 && @winner == false  
+  return @game_on = false if @turn == 9 && @winner == false
 end
 
 def winner_message
