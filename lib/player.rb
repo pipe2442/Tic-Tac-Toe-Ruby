@@ -15,10 +15,11 @@ def win_validator(_board, _firstp, _secondp, comb)
   comb.find do |ind|
     values = @board.values_at(*ind)
     next unless values.all?('X') || values.all?('O')
+    system 'clear'
 
-    create_board
     @winner = true
     winner_message
+    create_board
     @game_on = false
   end
 end
@@ -44,9 +45,12 @@ def valid_moves(player_sel, _board)
 end
 
 def draw_case
-  draw_message if @turn == 9 && @winner == false
-  create_board
-  return @game_on = false if @turn == 9 && @winner == false
+  if @turn == 9 && @winner == false
+    system 'clear'
+    draw_message
+    create_board
+    return @game_on = false if @turn == 9 && @winner == false
+  end
 end
 
 def winner_message

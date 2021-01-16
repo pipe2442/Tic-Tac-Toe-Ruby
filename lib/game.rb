@@ -11,6 +11,13 @@ class GameBoard
 
   def game_turn
     while @game_on
+      system 'clear'
+      if @valid_move == false
+        puts
+        puts 'Sorry thats not a valid move'
+        puts
+      end
+      @valid_move = true
       player = @first_player
       selection = 'X'
       if @turn.odd?
@@ -23,7 +30,6 @@ class GameBoard
       valid_moves(player_sel, @board)
       @turn += 1
       game_selector(player, player_sel, selection)
-      @valid_move = true
       win_validator(@board, @first_player, @second_player, combinations)
       draw_case
     end

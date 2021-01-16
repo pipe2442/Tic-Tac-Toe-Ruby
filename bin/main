@@ -12,30 +12,37 @@ end
 
 def draw_message
   puts 'SORRY, ITS A DRAW NO WINNER'
+  puts
 end
 
 def valid_message
   puts 'THATS NOT A VALID MOVE!'
+  puts
 end
 
 def spot_taken_message
   puts 'THAT SPOT IS ALREADY TAKEN'
+  puts
 end
 
 def winfplayer_message
   puts "Congrats #{@first_player} you are the winner"
+  puts
 end
 
 def winsplayer_message
   puts "Congrats #{@second_player} you are the winner"
+  puts
 end
 
 def xmove_selection
   puts "Its 'X' turn select a number:"
+  puts
 end
 
 def omove_selection
   puts "Its 'O' turn select a number:"
+  puts
 end
 
 def chomping
@@ -56,6 +63,10 @@ second_player = gets.chomp
 puts ' '
 puts "Hello #{second_player},You will be playing with 'O'"
 puts ' '
+puts 'Press any key to start'
+puts ' '
+start_game = gets.chomp
+system 'clear'
 
 tictactoe = GameBoard.new(first_player, second_player)
 tictactoe.game_turn
