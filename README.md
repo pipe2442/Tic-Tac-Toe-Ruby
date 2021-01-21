@@ -15,7 +15,7 @@ An early variation of tic-tac-toe was played in the Roman Empire, around the fir
 
 ## Live Demo
 
-[Live Demo Link Repl.it](https://repl.it/@pipe2442/TIC-TAC-TOE#main.rb)
+[Live Demo Link Repl.it](https://repl.it/@pipe2442/RUBY-TIC-TAC-TOE)
 
 
 ## Getting Started
